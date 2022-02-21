@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func quickSort(arr []int, start, end int) {
 	if start < end {
 		i, j := start, end
@@ -27,10 +25,4 @@ func quickSort(arr []int, start, end int) {
 			quickSort(arr, i, end)
 		}
 	}
-}
-
-func main() {
-	arr := []int{45, 12, 42, 33, 10, 44, 0, 27, 27, 20}
-	quickSort(arr, 0, len(arr)-1)
-	fmt.Println(arr)
 }
