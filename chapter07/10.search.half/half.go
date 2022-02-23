@@ -48,14 +48,18 @@ func half(p []int, left int, right int, targetNum int) bool {
 	if key == targetNum {
 		return true
 	} else {
-		if left == right {
-			return false
-		}
+
 		if targetNum < key {
-			half(p, 0, middle, targetNum)
+			if left == right {
+				return false
+			}
+			return half(p, 0, middle, targetNum)
 		}
 		if targetNum > key {
-			half(p, middle+1, right, targetNum)
+			if left == right {
+				return false
+			}
+			return half(p, middle+1, right, targetNum)
 		}
 
 	}
