@@ -5,12 +5,12 @@ import (
 	"sort"
 )
 
-type RandItem struct {
+type RankItem struct {
 	Name    string
 	FatRate float64
 }
 type FatRateRank struct {
-	Item []RandItem
+	Item []RankItem
 }
 
 var personFatRate = map[string]float64{}
@@ -28,10 +28,10 @@ func (f *FatRateRank) inputRecord(name string, fatRate ...float64) {
 		}
 		f.Item[i] = item //?  啥意思
 	}
-	//personFatRate[name] = minFatRate
+	personFatRate[name] = minFatRate
 }
 
-func getRand(name string) (rank int, fataRate float64) {
+func (f *FatRateRank) getRand(name string) (rank int, fataRate float64) {
 	fatRate2PersonMap := map[float64][]string{}
 	rankArr := make([]float64, 0, len(personFatRate))
 	for nameItem, frItem := range personFatRate {

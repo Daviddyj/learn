@@ -1,4 +1,4 @@
-module learn.go
+module learn
 
 go 1.17
 

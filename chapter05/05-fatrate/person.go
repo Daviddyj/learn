@@ -6,7 +6,7 @@ import (
 )
 
 type Person struct {
-	name    string
+	name    string ``
 	sex     string
 	tall    float64
 	weight  float64
