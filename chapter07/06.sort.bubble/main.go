@@ -24,7 +24,7 @@ func bubbleSort(arry []int) {
 				arry[j], arry[j+1] = arry[j+1], arry[j]
 			}
 		}
-		fmt.Println("中间排序:", arry)
+		//fmt.Println("中间排序:", arry)
 	}
 
 	fmt.Println("最终排序:", arry)

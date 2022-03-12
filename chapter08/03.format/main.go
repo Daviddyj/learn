@@ -44,9 +44,9 @@ func writeFile(filePath string, data []byte) {
 	personInformation := apis.PersonInformation{}
 	json.Unmarshal(data, &personInformation)
 	fmt.Println("反序列化:", personInformation)
-	bmi, _ := gobmi.BMI(personInformation.Weight, personInformation.Tall)
+	bmi, _ := gobmi.BMI(float64(personInformation.Weight), float64(personInformation.Tall))
 	fmt.Printf("%s的BMI是%v\n", personInformation.Name, bmi)
-	fatRate := gobmi.CalcFatRate(personInformation.Age, bmi, personInformation.Sex)
+	fatRate := gobmi.CalcFatRate(int(personInformation.Age), bmi, personInformation.Sex)
 	fmt.Printf("%s的体脂率是%v\n", personInformation.Name, fatRate)
 }
 

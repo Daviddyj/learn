@@ -38,8 +38,8 @@ func (*InputFromStd) GetInput() *apis.PersonInformation {
 	return &apis.PersonInformation{
 		Name:   name,
 		Sex:    sex,
-		Tall:   tall,
-		Weight: weight,
-		Age:    age,
+		Tall:   float32(tall),
+		Weight: float32(weight),
+		Age:    int64(age),
 	}
 }
