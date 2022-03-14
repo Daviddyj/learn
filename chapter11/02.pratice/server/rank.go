@@ -9,8 +9,15 @@ type RandItem struct {
 	Name    string
 	FatRate float64
 }
+
 type FatRateRank struct {
 	Item []RandItem
+}
+
+func NewFatRateRank() *FatRateRank {
+	return &FatRateRank{
+		Item: make([]RandItem, 0, 100),
+	}
 }
 
 var personFatRate = map[string]float64{}

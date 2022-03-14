@@ -41,6 +41,7 @@ func main() {
 }
 
 func talk(conn net.Conn) {
+	defer fmt.Println("结束连接:", conn)
 	defer conn.Close()
 	for {
 		buf := make([]byte, 1024)
@@ -62,5 +63,8 @@ func talk(conn net.Conn) {
 			continue
 		}
 		conn.Write([]byte(resp))
+		if resp == "再见" {
+			break
+		}
 	}
 }
