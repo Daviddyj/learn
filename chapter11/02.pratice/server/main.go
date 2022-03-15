@@ -82,6 +82,7 @@ func talk(conn net.Conn, rank *FatRateRank) {
 				log.Println("传回客户端信息反序列化失败:", err)
 			}
 			conn.Write(data)
+			break
 
 		}
 
