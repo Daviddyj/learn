@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	r := strings.NewReader("daiyijie")
-	resp, err := http.Post("https://www.baidu.com", "*/*", r)
+	r := strings.NewReader("戴一杰是个大天才")
+	resp, err := http.Post("http://127.0.0.1:8088", "*/*", r)
 	if err != nil {
 		log.Fatal(err)
 	}
