@@ -4,13 +4,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"learn/chapter12/02.pratice/frinterface"
 	"learn/pkg/apis"
 	"net/http"
 	"strings"
 )
 
 func main() {
-	var rankServer ServerInterface
+	var rankServer frinterface.ServerInterface = NewFatRateRank()
 	m := http.NewServeMux()
 	m.Handle("/register", http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
 		if !strings.EqualFold(request.Method, "post") {

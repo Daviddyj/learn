@@ -1,4 +1,4 @@
-package main
+package frinterface
 
 import "learn/pkg/apis"
 

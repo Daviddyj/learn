@@ -14,7 +14,6 @@ type PersonInformationFatRate struct {
 
 type PersonRank struct {
 	Name       string
-	Sex        string
 	RankNumber int
 	FatRate    float64
 }
