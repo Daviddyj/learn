@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package main;
+
+
+message PersonInformation {
+  // @gotags: gorm:"primaryKey;column:id"
+  int64 id =1;
+   // @gotags: gorm:"column:name"
+  string name = 2;
+  // @gotags: gorm:"column:sex"
+  string sex =3;
+  // @gotags: gorm:"column:tall"
+  float tall =4;
+  // @gotags: gorm:"column:weight"
+  float weight =5;
+  // @gotags: gorm:"column:age"
+  int64 age =6;
+
+ repeated ExtraInfo extra =7;
+
+
+}
+
+message ExtraInfo {
+  string key =1;
+  string value =2;
+}
