@@ -6,6 +6,7 @@ message PersonalInformationList {
   repeated PersonInformation items = 1;
 }
 
+<<<<<<< HEAD
 
 message PersonInformation {
    // @gotags: gorm:"column:name"
@@ -18,5 +19,50 @@ message PersonInformation {
   float weight =4;
   // @gotags: gorm:"column:age"
   int64 age =5;
+=======
+service RankService {
+  rpc Register(PersonInformation) returns (PersonInformation){}
+  rpc UpdatePersonInformation(PersonInformation) returns (PersonInformationFatRate){}
+  rpc GetFateRate(PersonInformation) returns (PersonRank){}
+  rpc GetTop(null) returns (PersonRanks){}
+
+  rpc RegisterPersons(stream  PersonInformation) returns (PersonalInformationList){}
+  rpc WatchPersons(null) returns (stream PersonInformation){}
+}
+
+
+message PersonRanks {
+  repeated PersonRank personRanks=1;
+}
+
+message PersonInformationFatRate{
+  string name =1;
+  float fatRate =2;
+}
+
+message PersonRank{
+  string name=1;
+  string sex=2;
+  int64 rankNumber=3;
+  float fatRate=4;
+}
+
+message null{}
+
+
+message PersonInformation {
+  // @gotags: gorm:"primaryKey;column:id"
+  int64 id =1;
+   // @gotags: gorm:"column:name"
+  string name = 2;
+  // @gotags: gorm:"column:sex"
+  string sex =3;
+  // @gotags: gorm:"column:tall"
+  float tall =4;
+  // @gotags: gorm:"column:weight"
+  float weight =5;
+  // @gotags: gorm:"column:age"
+  int64 age =6;
+>>>>>>> 0efc8eb... 0327
 
 }

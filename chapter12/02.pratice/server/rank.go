@@ -44,7 +44,11 @@ func (f *FatRateRank) UpdatePersonInformation(pi *apis.PersonInformation) (*apis
 	//rank, fatRate := getRand(pi.Name)
 	return &apis.PersonInformationFatRate{
 		Name:    pi.Name,
+<<<<<<< HEAD
 		FatRate: ft,
+=======
+		FatRate: float32(ft),
+>>>>>>> 0efc8eb... 0327
 	}, err
 }
 
@@ -52,8 +56,13 @@ func (f *FatRateRank) GetFateRate(name string) (*apis.PersonRank, error) {
 	rank, fatRate := getRand(name)
 	return &apis.PersonRank{
 		Name:       name,
+<<<<<<< HEAD
 		RankNumber: rank,
 		FatRate:    fatRate,
+=======
+		RankNumber: int64(rank),
+		FatRate:    float32(fatRate),
+>>>>>>> 0efc8eb... 0327
 	}, nil
 }
 
@@ -120,8 +129,13 @@ func (r *FatRateRank) getRankTop() []*apis.PersonRank {
 		item := r.Item[i]
 		out = append(out, &apis.PersonRank{
 			Name:       item.Name,
+<<<<<<< HEAD
 			RankNumber: i,
 			FatRate:    item.FatRate,
+=======
+			RankNumber: int64(i),
+			FatRate:    float32(item.FatRate),
+>>>>>>> 0efc8eb... 0327
 		})
 	}
 	return out

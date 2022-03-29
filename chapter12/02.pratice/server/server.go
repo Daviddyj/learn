@@ -6,6 +6,10 @@ import (
 	"io/ioutil"
 	"learn/chapter12/02.pratice/frinterface"
 	"learn/pkg/apis"
+<<<<<<< HEAD
+=======
+	"log"
+>>>>>>> 0efc8eb... 0327
 	"net/http"
 	"strings"
 )
@@ -118,5 +122,11 @@ func main() {
 		}
 	}))
 
+<<<<<<< HEAD
 	http.ListenAndServe(":8080", m)
+=======
+	if err := http.ListenAndServe(":8080", m); err != nil {
+		log.Fatal(err)
+	}
+>>>>>>> 0efc8eb... 0327
 }
