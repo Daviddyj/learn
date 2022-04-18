@@ -8,9 +8,7 @@ type ServerInterface interface {
 	GetFateRate(name string) (*apis.PersonRank, error)
 	GetTop() ([]*apis.PersonRank, error)
 }
-<<<<<<< HEAD
-=======
+
 type RankInitInterface interface {
 	Init() error
 }
->>>>>>> 0efc8eb... 0327

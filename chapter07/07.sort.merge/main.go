@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //来自百度的归并排序
 func mergeSort(r []int) []int {
 	length := len(r)
@@ -13,7 +15,7 @@ func mergeSort(r []int) []int {
 }
 func merge(left, right []int) (result []int) {
 	l, r := 0, 0
-	for l < len(left) && r < len(right) {
+	for {
 		if left[l] < right[r] {
 			result = append(result, left[l])
 			l++
@@ -21,8 +23,18 @@ func merge(left, right []int) (result []int) {
 			result = append(result, right[r])
 			r++
 		}
+		if l == len(left) {
+			result = append(result, right[r:]...)
+			return result
+		}
+		if r == len(right) {
+			result = append(result, left[l:]...)
+			return result
+		}
 	}
-	result = append(result, left[l:]...)
-	result = append(result, right[r:]...)
-	return
+}
+
+func main() {
+	arr := []int{45, 12, 42, 33, 10, 44, 0, 27, 27, 20}
+	fmt.Println(mergeSort(arr))
 }

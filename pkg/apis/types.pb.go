@@ -4,17 +4,12 @@
 package apis
 
 import (
-<<<<<<< HEAD
-	fmt "fmt"
-	proto "github.com/golang/protobuf/proto"
-=======
 	context "context"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
->>>>>>> 0efc8eb... 0327
 	math "math"
 )
 
@@ -68,19 +63,6 @@ func (m *PersonalInformationList) GetItems() []*PersonInformation {
 	return nil
 }
 
-<<<<<<< HEAD
-type PersonInformation struct {
-	// @gotags: gorm:"column:name"
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" gorm:"column:name"`
-	// @gotags: gorm:"column:sex"
-	Sex string `protobuf:"bytes,2,opt,name=sex,proto3" json:"sex,omitempty" gorm:"column:sex"`
-	// @gotags: gorm:"column:tall"
-	Tall float32 `protobuf:"fixed32,3,opt,name=tall,proto3" json:"tall,omitempty" gorm:"column:tall"`
-	// @gotags: gorm:"column:weight"
-	Weight float32 `protobuf:"fixed32,4,opt,name=weight,proto3" json:"weight,omitempty" gorm:"column:weight"`
-	// @gotags: gorm:"column:age"
-	Age                  int64    `protobuf:"varint,5,opt,name=age,proto3" json:"age,omitempty" gorm:"column:age"`
-=======
 type PersonRanks struct {
 	PersonRanks          []*PersonRank `protobuf:"bytes,1,rep,name=personRanks,proto3" json:"personRanks,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
@@ -274,7 +256,6 @@ type PersonInformation struct {
 	Weight float32 `protobuf:"fixed32,5,opt,name=weight,proto3" json:"weight,omitempty"`
 	// @gotags: gorm:"column:age"
 	Age                  int64    `protobuf:"varint,6,opt,name=age,proto3" json:"age,omitempty"`
->>>>>>> 0efc8eb... 0327
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -284,11 +265,7 @@ func (m *PersonInformation) Reset()         { *m = PersonInformation{} }
 func (m *PersonInformation) String() string { return proto.CompactTextString(m) }
 func (*PersonInformation) ProtoMessage()    {}
 func (*PersonInformation) Descriptor() ([]byte, []int) {
-<<<<<<< HEAD
-	return fileDescriptor_d938547f84707355, []int{1}
-=======
 	return fileDescriptor_d938547f84707355, []int{5}
->>>>>>> 0efc8eb... 0327
 }
 
 func (m *PersonInformation) XXX_Unmarshal(b []byte) error {
@@ -309,8 +286,6 @@ func (m *PersonInformation) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_PersonInformation proto.InternalMessageInfo
 
-<<<<<<< HEAD
-=======
 func (m *PersonInformation) GetId() int64 {
 	if m != nil {
 		return m.Id
@@ -318,7 +293,6 @@ func (m *PersonInformation) GetId() int64 {
 	return 0
 }
 
->>>>>>> 0efc8eb... 0327
 func (m *PersonInformation) GetName() string {
 	if m != nil {
 		return m.Name
@@ -356,34 +330,16 @@ func (m *PersonInformation) GetAge() int64 {
 
 func init() {
 	proto.RegisterType((*PersonalInformationList)(nil), "apis.PersonalInformationList")
-<<<<<<< HEAD
-=======
 	proto.RegisterType((*PersonRanks)(nil), "apis.PersonRanks")
 	proto.RegisterType((*PersonInformationFatRate)(nil), "apis.PersonInformationFatRate")
 	proto.RegisterType((*PersonRank)(nil), "apis.PersonRank")
 	proto.RegisterType((*Null)(nil), "apis.null")
->>>>>>> 0efc8eb... 0327
 	proto.RegisterType((*PersonInformation)(nil), "apis.PersonInformation")
 }
 
 func init() { proto.RegisterFile("types.proto", fileDescriptor_d938547f84707355) }
 
 var fileDescriptor_d938547f84707355 = []byte{
-<<<<<<< HEAD
-	// 181 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x64, 0x8f, 0x31, 0x8a, 0xc3, 0x30,
-	0x10, 0x45, 0x91, 0x65, 0x1b, 0x76, 0xdc, 0xec, 0xaa, 0x58, 0xab, 0x14, 0xae, 0xd4, 0xc4, 0x45,
-	0x72, 0x89, 0x04, 0x52, 0x04, 0xdd, 0x40, 0x81, 0x89, 0x23, 0xb0, 0x25, 0x63, 0x0d, 0x38, 0xb9,
-	0x7d, 0x90, 0x9c, 0x22, 0x90, 0xee, 0xcd, 0x9f, 0xf7, 0x8b, 0x0f, 0x0d, 0x3d, 0x67, 0x8c, 0xfd,
-	0xbc, 0x04, 0x0a, 0xa2, 0xb4, 0xb3, 0x8b, 0xdd, 0x11, 0xda, 0x0b, 0x2e, 0x31, 0x78, 0x3b, 0x9e,
-	0xfc, 0x2d, 0x2c, 0x93, 0x25, 0x17, 0xfc, 0xd9, 0x45, 0x12, 0x3b, 0xa8, 0x1c, 0xe1, 0x14, 0x25,
-	0x53, 0x5c, 0x37, 0xfb, 0xb6, 0x4f, 0x85, 0x7e, 0xb3, 0x3f, 0x5c, 0xb3, 0x59, 0xdd, 0x0a, 0x7f,
-	0x5f, 0x3f, 0x21, 0xa0, 0xf4, 0x76, 0x42, 0xc9, 0x14, 0xd3, 0x3f, 0x26, 0xb3, 0xf8, 0x05, 0x1e,
-	0xf1, 0x21, 0x8b, 0x1c, 0x25, 0x4c, 0x16, 0xd9, 0x71, 0x94, 0x5c, 0x31, 0x5d, 0x98, 0xcc, 0xe2,
-	0x1f, 0xea, 0x15, 0xdd, 0x70, 0x27, 0x59, 0xe6, 0xf4, 0x7d, 0xa5, 0xb6, 0x1d, 0x50, 0x56, 0x8a,
-	0x69, 0x6e, 0x12, 0x5e, 0xeb, 0xbc, 0xe7, 0xf0, 0x0a, 0x00, 0x00, 0xff, 0xff, 0x9e, 0x61, 0x15,
-	0x60, 0xde, 0x00, 0x00, 0x00,
-=======
 	// 406 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x53, 0x4d, 0x8f, 0xd3, 0x30,
 	0x10, 0x8d, 0x93, 0x6c, 0x60, 0x27, 0x08, 0x76, 0xe7, 0x40, 0xad, 0x95, 0x58, 0x45, 0x3e, 0x85,
@@ -733,5 +689,4 @@ var _RankService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Metadata: "types.proto",
->>>>>>> 0efc8eb... 0327
 }
